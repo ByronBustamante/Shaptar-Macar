@@ -243,8 +243,14 @@ footer li:hover{ text-decoration: underline; cursor: pointer;}
   text-align: center;
   cursor: pointer;
   text-decoration: none;
+  display: none;
 }
 .button-plus:active{ background-color: #da3d31;}
+@media (min-width: 1000px){
+  .button-plus{
+    display: block;
+  }
+}
 
 .footer{ display: none;}
 @media (min-width: 1000px){
