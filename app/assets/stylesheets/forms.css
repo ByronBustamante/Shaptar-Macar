@@ -73,6 +73,11 @@ select{
   font-size: 15px;
   border: solid 1px #e8e8e8;
 }
+@media (max-width: 766px){
+  .textarea-contacto-shaptar{
+    height: 300px;
+  }
+}
 
 .button-shaptar-green{
   width: 100%;
