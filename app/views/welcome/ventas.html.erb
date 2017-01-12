@@ -1,0 +1,202 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#facturar" role="tab">Facturar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#envios" role="tab">Envios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#notas-de-credito" role="tab">Notas de Credito</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+<div class="tab-pane active" id="facturar" role="tabpanel">
+<div class="row">
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar-withe" placeholder="Factura Número:">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar-withe" placeholder="Fecha de Facturación:">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar-withe" placeholder="Vendedor:">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Código Cliente">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Nit Cliente">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Observaciones">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <input type="text" class="input-shaptar" placeholder="Coding Articulo">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Cantidad">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="col-xs-2">Código</div>
+    <div class="col-xs-4">Producto</div>
+    <div class="col-xs-2">Cantidad</div>
+    <div class="col-xs-2">Descuento</div>
+    <div class="col-xs-2 text-end">Precio</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Sub Total">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Descuento">
+  </div>
+  <div class="col-xs-4">
+    <input type="text" class="input-shaptar" placeholder="Total">
+  </div>
+</div>
+</div>
+
+
+
+<div class="tab-pane" id="envios" role="tabpanel">
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar-withe" placeholder="Factura Número:">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar-withe" placeholder="Fecha de Facturación:">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar-withe" placeholder="Vendedor:">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Código Cliente">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Nit Cliente">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Observaciones">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <input type="text" class="input-shaptar" placeholder="Coding Articulo">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Cantidad">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-2">Código</div>
+      <div class="col-xs-4">Producto</div>
+      <div class="col-xs-2">Cantidad</div>
+      <div class="col-xs-2">Descuento</div>
+      <div class="col-xs-2 text-end">Precio</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Sub Total">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Descuento">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Total">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="tab-pane" id="notas-de-credito" role="tabpanel">
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar-withe" placeholder="Factura Número:">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar-withe" placeholder="Fecha de Facturación:">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar-withe" placeholder="Vendedor:">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Código Cliente">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Nit Cliente">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Observaciones">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <input type="text" class="input-shaptar" placeholder="Coding Articulo">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Cantidad">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-2">Código</div>
+      <div class="col-xs-4">Producto</div>
+      <div class="col-xs-2">Cantidad</div>
+      <div class="col-xs-2">Descuento</div>
+      <div class="col-xs-2 text-end">Precio</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Sub Total">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Descuento">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="input-shaptar" placeholder="Total">
+    </div>
+  </div>
+</div>
+
+</div>
+
+<% else %>
+
+<% end %>

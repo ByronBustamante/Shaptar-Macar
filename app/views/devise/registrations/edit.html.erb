@@ -1,0 +1,123 @@
+<div class="container">
+
+  <div class="row flex-items-xs-center">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-5">
+
+      <div class="box-devise">
+
+      <h2>Editar Información</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+        <div class="field">
+          <div class="row">
+
+            <div class="col-xs-12">
+              <%= f.label :Correo_Electrónico %><br />
+              <%= f.email_field :email, placeholder: "Correo Electrónico", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :Representante_Legal %><br />
+              <%= f.text_field :legal_representative, placeholder: "Representante Legal", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :Nombre_de_la_Empresa %><br />
+              <%= f.text_field :company_name, placeholder: "Nombre de la Empresa", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :Razón_Social %><br />
+              <%= f.text_field :business_name, placeholder: "Razón Social", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :NIT %><br />
+              <%= f.number_field :nit, placeholder: "NIT", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :Teléfono %><br />
+              <%= f.number_field :phone, placeholder: "Teléfono", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.label :Dirección_de_la_Empresa %><br />
+              <%= f.text_field :company_address, placeholder: "Direccion de la Empresa", :class => 'input-shaptar', autofocus: true %>
+            </div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+            <div class="col-xs-12">
+              <%= f.label :Contraseña %> <br /> (dejar en blanco si no desea cambiarla)<br />
+              <%= f.password_field :password, placeholder: "Nueva Contraseña", :class => 'input-shaptar', autocomplete: "off" %>
+              <% if @minimum_password_length %><br />
+              <em><%= @minimum_password_length %> caracteres como minimo</em>
+              <% end %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.password_field :password_confirmation, placeholder: "Confirmar Nueva Contraseña", :class => 'input-shaptar', autocomplete: "off" %>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="container">
+  <div class="row flex-items-xs-center">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-5">
+
+      <div class="box-devise">
+
+        <div class="row">
+
+          <div class="col-xs-12">
+            <h2>Contraseña Actual</h2> <p>(Necesitamos su contraseña actual para confirmar los cambios)</p>
+            <%= f.password_field :current_password, placeholder: "Contraseña Actual", :class => 'input-shaptar', autocomplete: "off" %>
+          </div>
+
+          <div class="col-xs-12">
+            <%= f.submit "Actualizar Información", :class => 'button-shaptar-white' %>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="container">
+  <div class="row flex-items-xs-center">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-5">
+
+      <div class="box-devise">
+
+        <div class="col-xs-12">
+          <h3>Eliminar mi Cuenta</h3>
+          <p>Al ELIMINAR perderá toda la información, fotografías y toda su base de datos en general, está seguro de continuar? <%= button_to "Eliminar por Completo", registration_path(resource_name), data: { confirm: "estas a punto de perderlo todo, desea continuar?" }, method: :delete, :class => 'button-shaptar-red' %></p>
+          <%= link_to "Back", :back %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

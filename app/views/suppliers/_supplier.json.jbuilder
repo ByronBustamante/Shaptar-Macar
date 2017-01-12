@@ -1,0 +1,2 @@
+json.extract! supplier, :id, :supplier_code, :nit, :supplier_name, :company_name, :country, :department_or_state, :full_address, :telephone_1, :telephone_2, :mobile_1, :mobile_2, :email, :web_page, :observations, :created_at, :updated_at
+json.url supplier_url(supplier, format: :json)

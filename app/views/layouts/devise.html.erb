@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+  <title>Shaptar-SGC</title>
+  <meta name="viewport" content="initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- Barra de menú -->
+
+<div class="container-fluid background">
+  <nav class="row">
+    <div class="col-xs-6">
+      <%= link_to image_tag("logo-shaptar-sgc-2.png"), {controller: '/welcome', action: 'index'}%>
+    </div>
+    <div class="col-xs-6 flex-xs-middle text-end">
+      <ul>
+        <li><%= link_to "Regresar a Inicio", {controller: "/welcome", action: "index"} %></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Cuerpo -->
+
+  <%= yield %>
+
+</body>
+</html>

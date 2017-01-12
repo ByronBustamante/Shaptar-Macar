@@ -1,0 +1,92 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#proveedores" role="tab">Proveedores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#nuevo-proveedor" role="tab">Nuevo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+
+<div class="tab-content">
+
+  <div class="tab-pane active" id="proveedores" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-8 col-md-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-4 col-md-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+
+      <div class="col-xs-12 negative">
+        <pre>
+          <table>
+
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Id</th>
+              <th>Código</th>
+              <th>Nit</th>
+              <th>Nombre del Proveedor</th>
+              <th>Razón Social</th>
+              <th>País</th>
+              <th>Departamento o Estado</th>
+              <th>Dirección</th>
+              <th>teléfono 1</th>
+              <th>teléfono 2</th>
+              <th>Celular 1</th>
+              <th>Celular 2</th>
+              <th>Correo Electrónico</th>
+              <th>Página Web</th>
+              <th>Observaciones</th>
+            </tr>
+
+            <% @suppliers.each do |supplier| %>
+            <tr>
+              <td><%= link_to 'Editar', edit_supplier_path(supplier) %></td>
+              <td><%= link_to 'Eliminar', supplier, method: :delete, data: { confirm: 'Esta seguro de eliminar este proveedor?' } %></td>
+              <td><%= supplier.id %></td>
+              <td><%= supplier.supplier_code %></td>
+              <td><%= supplier.nit %></td>
+              <td><%= supplier.supplier_name %></td>
+              <td><%= supplier.company_name %></td>
+              <td><%= supplier.country %></td>
+              <td><%= supplier.department_or_state %></td>
+              <td><%= supplier.full_address %></td>
+              <td><%= supplier.telephone_1 %></td>
+              <td><%= supplier.telephone_2 %></td>
+              <td><%= supplier.mobile_1 %></td>
+              <td><%= supplier.mobile_2 %></td>
+              <td><%= supplier.email %></td>
+              <td><%= supplier.web_page %></td>
+              <td><%= supplier.observations %></td>
+            </tr>
+            <% end %>
+
+          </table>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="nuevo-proveedor" role="tabpanel">
+    <br><h2>Ingresar un Nuevo Proveedor</h2><br>
+    <%= render 'suppliers/form' %>
+  </div>
+
+</div>
+
+<% else %>
+
+<% end %>

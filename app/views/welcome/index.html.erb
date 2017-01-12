@@ -1,0 +1,238 @@
+<% if user_signed_in? %>
+
+<div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-2 col-lg-1">
+    <div class="box-editar-perfil">
+      <div class="informacion"><%= link_to image_tag("informacion.svg"), edit_user_registration_path %></div>
+      <div class="foto"><%= image_tag "foto.svg" %></div>
+    </div>
+  </div>
+  <div class="col-xs-9 col-sm-9 col-md-10 col-lg-3">
+    <div class="box-logo-white"><%= image_tag "logo-macar.png" %></div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 box-perfil">
+    <h4><b>Información General</b></h4>
+
+    <b>Representante Legal:</b>
+    <p><%= current_user.legal_representative %></p>
+
+    <b>Nit:</b>
+    <p><%= current_user.nit %></p>
+
+    <b>Nombre de la Empresa:</b>
+    <p><%= current_user.company_name %></p>
+
+    <b>Razón Social:</b>
+    <p><%= current_user.business_name %></p>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 box-perfil">
+    <h4><b>Información de Contacto</b></h4>
+
+    <b>Teléfono:</b>
+    <p><%= current_user.phone %></p>
+
+    <b>Correo Electrónico</b>
+    <p><%= current_user.email %></p>
+
+    <b>Dirección de la Empresa</b>
+    <p><%= current_user.company_address %></p>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-12">
+    <canvas id="myChart" width="1140" height="360"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"],
+      datasets: [
+        {
+            label: "Compras",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "#e23737",
+            borderColor: "#e23737",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#e23737",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 8,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "#e23737",
+            pointHoverBorderColor: "#e23737",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [0, 300, 20, 191, 76, 14, 130, 40],
+            spanGaps: false,
+        },{
+              label: "Ventas",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#1A5EA1",
+              borderColor: "#1A5EA1",
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "#1A5EA1",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 8,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "#1A5EA1",
+              pointHoverBorderColor: "#1A5EA1",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [100, 30, 60, 11, 76, 11, 30, 40, 60, 200, 10, 12],
+              spanGaps: false,
+          }
+      ]
+        },
+    });
+    </script>
+  </div>
+</div>
+
+<% else %>
+
+<div class="box-landing-page-background">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4 box-logo-black">
+      <%= image_tag "logo-macar.png" %>
+    </div>
+  </div>
+</div>
+
+<div class="box-landing-page">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Quienes Somos?</h1>
+      <br>
+      <p>
+        Somos una empresa guatemalteca, dedicada a la importación de productos
+        tecnológicos para cubrir las necesidades de nuestros clientes y
+        colaboradores, se fundamenta en los principios de honestidad, honradez y
+        respeto, contamos con el respaldo de un equipo colaborador de amplia y
+        diversa experiencia en la venta de productos y servicios de tecnología.
+      </p>
+      <br>
+      <h3>Misión</h3>
+      <p>
+        Ser una empresa exitosa, comprometida con el desarrollo y la excelencia
+        en el mercado de la tecnología, velar por la satisfacción de nuestros
+        clientes con productos de alta calidad y excelente servicio por parte de
+        nuestros colaboradores.
+      </p>
+      <h3>Visión</h3>
+      <p>
+        Crecer de la mano de nuestros clientes, brindandoles el mejor servicio,
+        la mejor calidad en nuestros productos. Lograr posicionar nuestras
+        marcas y superar las existentes en el mercado, para que nuestros
+        clientes confíen y cuenten con nosotros y de esta manera lograr la
+        expansión a nivel centroamericano.
+      </p>
+    </div>
+    <div class="col-xs-12">
+      <h1></h1>
+    </div>
+  </div>
+</div>
+
+<div class="box-landing-page-gray">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Nuestros Productos</h1>
+    </div>
+    <div class="col-xs-12">
+      <h1></h1>
+    </div>
+  </div>
+</div>
+
+<div class="box-landing-page">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Ofertas Especiales</h1>
+    </div>
+    <div class="col-xs-12">
+      <h1></h1>
+    </div>
+  </div>
+</div>
+
+<div class="box-landing-page-gray">
+  <div class="row">
+
+    <div class="col-xs-12 text-center">
+      <h1>Marcas de Confianza</h1>
+      <h4>Algunas de las marcas en las que somos distribuidor autorizado</h4>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box-logo-white"><%= image_tag "logo-benssini.png", width: '85%' %></div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box-logo-white"><%= image_tag "logo-trek.png", width: '90%' %></div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box-logo-white"><%= image_tag "logo-scanbrik.png", width: '90%' %></div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box-logo-white"><%= image_tag "logo-miyakousa.png", width: '90%' %></div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box-logo-white"><%= image_tag "logo-wahl.png", width: '90%' %></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="box-landing-page">
+  <div class="row">
+
+    <div class="col-xs-12 text-center">
+      <h1>Contactenos</h1>
+      <h4>Escríbanos si desea más información sobre nuestra gama de productos</h4>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <textarea class="textarea-contacto-shaptar" name="mensaje" placeholder="Escriba su Mensaje:"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <input type="text" class="input-shaptar" name="nombre" placeholder="Nombre y Apellido" value="">
+        </div>
+        <div class="col-xs-12">
+          <input type="text" class="input-shaptar" name="nombre" placeholder="Teléfono" value="">
+        </div>
+        <div class="col-xs-12">
+          <input type="text" class="input-shaptar" name="nombre" placeholder="Correo Electronico" value="">
+        </div>
+        <div class="col-xs-12">
+          <input type="submit" value="Enviar Mensaje" class="button-shaptar-green" name="boton">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% end %>

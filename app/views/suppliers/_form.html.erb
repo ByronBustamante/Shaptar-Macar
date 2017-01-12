@@ -1,0 +1,75 @@
+<%= form_for(@supplier) do |f| %>
+  <% if @supplier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
+
+      <ul>
+      <% @supplier.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <%= f.number_field :supplier_code, :class => 'input-shaptar', :placeholder => 'Código Proveedor' %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <%= f.number_field :nit, :class => 'input-shaptar', :placeholder => 'Nit' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :supplier_name, :class => 'input-shaptar', :placeholder => 'Nombre del Proveedor' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :company_name, :class => 'input-shaptar', :placeholder => 'Razón Social' %>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <%= f.text_field :country, :class => 'input-shaptar', :placeholder => 'País' %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <%= f.text_field :department_or_state, :class => 'input-shaptar', :placeholder => 'Departamento o Estado' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :full_address, :class => 'input-shaptar', :placeholder => 'Dirección Completa' %>
+    </div>
+
+    <div class="col-xs-12 col-md-3">
+      <%= f.number_field :telephone_1, :class => 'input-shaptar', :placeholder => 'Teléfono 1' %>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <%= f.number_field :telephone_2, :class => 'input-shaptar', :placeholder => 'Teléfono 2' %>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <%= f.number_field :mobile_1, :class => 'input-shaptar', :placeholder => 'Celular 1' %>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <%= f.number_field :mobile_2, :class => 'input-shaptar', :placeholder => 'Celular 2' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :email, :class => 'input-shaptar', :placeholder => 'Correo Electrónico' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :web_page, :class => 'input-shaptar', :placeholder => 'Página Web' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_area :observations, :class => 'textarea-shaptar', :placeholder => 'Observaciones' %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row flex-items-xs-right">
+    <div class="col-xs-12 col-lg-3">
+      <%= f.submit 'Publicar Proveedor', :class => 'button-shaptar-green' %>
+    </div>
+  </div>
+
+<% end %>

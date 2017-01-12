@@ -1,0 +1,46 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#pedidos" role="tab">Pedidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#ingresar-nuevo-pedido" role="tab">Ingresar Nuevo Pedido</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <div class="tab-pane active" id="pedidos" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-8 col-md-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-4 col-md-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="ingresar-nuevo-pedido" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<% else %>
+
+<% end %>

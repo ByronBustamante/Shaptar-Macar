@@ -1,0 +1,92 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#productos-activos" role="tab">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#nuevos-productos" role="tab">Nuevo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+
+<div class="tab-content">
+
+  <div class="tab-pane active" id="productos-activos" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-8 col-md-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-4 col-md-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+
+      <div class="col-xs-12 negative">
+        <pre>
+          <table>
+
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Id</th>
+              <th>Foto</th>
+              <th>Código</th>
+              <th>Código de Barras</th>
+              <th>Nombre del Producto</th>
+              <th>Descripción</th>
+              <th>Fecha de Compra</th>
+              <th>Costo en Quetzales</th>
+              <th>Precio de Venta</th>
+              <th>Porcentaje de Descuento</th>
+              <th>Stock</th>
+              <th>Proveedor</th>
+              <th>Marca</th>
+              <th>Familia</th>
+              <th>Ubicación en Bodega</th>
+            </tr>
+
+            <% @products.each do |product| %>
+            <tr>
+              <td><%= link_to 'Editar', edit_product_path(product) %></td>
+              <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Está seguro de eliminar este producto?' } %></td>
+              <td><%= product.id %></td>
+              <td>3</td>
+              <td><%= product.product_code %></td>
+              <td><%= product.barcode %></td>
+              <td><%= product.product_name %></td>
+              <td><%= product.description %></td>
+              <td><%= product.purchase_date %></td>
+              <td>Q <%= product.cost_in_quetzales %></td>
+              <td>Q <%= product.sale_price %></td>
+              <td><%= product.percentage_in_sale %> % </td>
+              <td><%= product.number_of_articles %></td>
+              <td><%= product.name_supplier %></td>
+              <td><%= product.name_brand %></td>
+              <td><%= product.name_family %></td>
+              <td><%= product.name_location_in_warehouse %></td>
+            </tr>
+            <% end %>
+
+          </table>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="nuevos-productos" role="tabpanel">
+    <br><h2>Ingresar un Nuevo Producto</h2><br>
+    <%= render 'products/form' %>
+  </div>
+
+</div>
+
+<% else %>
+
+<% end %>

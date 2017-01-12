@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer code</th>
+      <th>Nit</th>
+      <th>Customer name</th>
+      <th>Company name</th>
+      <th>Country</th>
+      <th>Department or state</th>
+      <th>Full</th>
+      <th>Address</th>
+      <th>Telephone 1</th>
+      <th>Telephone 2</th>
+      <th>Mobile 1</th>
+      <th>Mobile 2</th>
+      <th>Email</th>
+      <th>Web page</th>
+      <th>Transportation</th>
+      <th>Credit in quetzales</th>
+      <th>Discount percentage</th>
+      <th>Observations</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.customer_code %></td>
+        <td><%= customer.nit %></td>
+        <td><%= customer.customer_name %></td>
+        <td><%= customer.company_name %></td>
+        <td><%= customer.country %></td>
+        <td><%= customer.department_or_state %></td>
+        <td><%= customer.full %></td>
+        <td><%= customer.address %></td>
+        <td><%= customer.telephone_1 %></td>
+        <td><%= customer.telephone_2 %></td>
+        <td><%= customer.mobile_1 %></td>
+        <td><%= customer.mobile_2 %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.web_page %></td>
+        <td><%= customer.transportation %></td>
+        <td><%= customer.credit_in_quetzales %></td>
+        <td><%= customer.discount_percentage %></td>
+        <td><%= customer.observations %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>

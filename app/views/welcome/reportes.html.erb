@@ -1,0 +1,62 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Ventas</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Envios</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Compras</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Devoluciones</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Artículos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Clientes</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Cuentas por Cobrar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Proveedores</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Vendedores</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <div class="tab-pane active" id="facturar" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="envios" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<% else %>
+
+<% end %>

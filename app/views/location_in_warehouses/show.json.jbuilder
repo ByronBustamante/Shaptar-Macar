@@ -1,0 +1,1 @@
+json.partial! "location_in_warehouses/location_in_warehouse", location_in_warehouse: @location_in_warehouse

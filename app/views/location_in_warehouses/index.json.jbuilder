@@ -1,0 +1,1 @@
+json.array! @location_in_warehouses, partial: 'location_in_warehouses/location_in_warehouse', as: :location_in_warehouse

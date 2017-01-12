@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="row flex-items-xs-center">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-5">
+
+      <div class="box-devise">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= image_tag "logo-shaptar-mini.png", alt: "Shaptar Pymes" %>
+          </div>
+        </div>
+
+        <b>¿Ha olvidado su contraseña?</b>
+        <p>Envíenos su correo electrónico, le enviaremos las instrucciones necesarias con
+        las que podrá recuperar el acceso a su cuenta.</p>
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.email_field :email, placeholder: "Correo Electrónico", :class => 'input-shaptar', autofocus: true %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.submit "Recuperar Contraseña", :class => 'button-shaptar-white' %>
+          </div>
+        </div>
+
+        <% end %>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

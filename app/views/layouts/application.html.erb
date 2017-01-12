@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shaptar SGC</title>
+  <meta name="viewport" content="initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if user_signed_in? %>
+
+<div class="container-fluid background">
+  <div class="nav-primary">
+  <nav class="row">
+    <div class="col-xs-3">
+      <%= link_to image_tag("logo-shaptar-sgc.png"), {controller: 'welcome', action: 'index'} %>
+    </div>
+    <div class="col-xs-9 flex-xs-middle text-end">
+      <ul>
+        <li><%= link_to "Byron Bustamante", {controller: 'welcome', action: 'index'} %></li>
+        <li>|</li>
+        <li><%= link_to "Mensajes", {controller: 'welcome', action: 'index'} %></li>
+        <li>|</li>
+
+        <li><a href="#">Servicios</a>
+          <div class="dropdownContain">
+          <div class="dropOut">
+          <div class="triangle"></div>
+            <ul>
+              <li><b><%= link_to "Inventario", {controller: "welcome", action: "productos"} %></b></li>
+              <li><b><%= link_to "Proveedores", {controller: "welcome", action: "proveedores"} %></b></li>
+              <li><b><%= link_to "Compras", {controller: "welcome", action: "compras"} %></b></li>
+              <li><b><%= link_to "Ventas", {controller: "welcome", action: "ventas"} %></b></li>
+              <li><b><%= link_to "Clientes", {controller: "welcome", action: "clientes"} %></b></li>
+            </ul>
+          </div>
+          </div>
+        </li>
+
+        <li>|</li>
+        <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "link-blanco" %></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 nav-secondary">
+      <div class="logo-secondary">
+        <%= link_to image_tag("logo-shaptar-sgc.png"), {controller: 'welcome', action: 'index'} %>
+      </div>
+    </div>
+
+    <div class="col-xs-6 nav-secondary">
+      <nav class="navbar navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse" id="exCollapsingNavbar">
+          <div class="bg-inverse text-muted p-1">
+            <h4 class="link-blanco">Menú</h4>
+            <%= link_to "Perfil", {controller: 'welcome', action: 'index'} %><br>
+            <%= link_to "Mensajes", {controller: 'welcome', action: 'index'} %><br>
+            <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "link-blanco" %><br><br>
+            <h4 class="link-blanco">Servicios</h4>
+            <%= link_to "Inventario", {controller: "welcome", action: "productos"} %><br>
+            <%= link_to "Proveedores", {controller: "welcome", action: "proveedores"} %><br>
+            <%= link_to "Compras", {controller: "welcome", action: "compras"} %><br>
+            <%= link_to "Ventas", {controller: "welcome", action: "ventas"} %><br>
+            <%= link_to "Clientes", {controller: "welcome", action: "clientes"} %><br><br>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <main class="within">
+    <%= yield %>
+  </main>
+</div>
+
+<%= link_to "+", {controller: 'welcome', action: 'reportes'}, class: "button-plus" %>
+
+<% else %>
+
+<div class="container-fluid background">
+  <nav class="row">
+    <div class="col-xs-6">
+      <%= link_to image_tag("logo-shaptar-sgc-2.png"), {controller: 'welcome', action: 'index'} %>
+    </div>
+    <div class="col-xs-6 flex-xs-middle text-end">
+      <ul>
+        <li><%= link_to "Iniciar Sesión", new_user_session_path %></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <main>
+    <%= yield %>
+  </main>
+</div>
+
+<div class="container-fluid">
+  <div class="footer">
+    <footer class="row">
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <meta name="Copyright" content="© 2006-2017"> <li>Copyright © 2016-2017</li>
+      </div>
+      <div class="col-xs-6 text-center">
+        <ul>
+          <li>Información</li> <li>·</li> <li>Productos</li> <li>·</li> <li>Marcas</li> <li>·</li> <li>Ofertas</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<%= link_to "+", {controller: 'welcome', action: 'reportes'}, class: "button-plus"%>
+
+<% end %>
+
+</body>
+</html>

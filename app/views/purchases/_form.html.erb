@@ -1,0 +1,53 @@
+<%= form_for(@purchase) do |f| %>
+  <% if @purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+      <% @purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%= f.collection_select :supplier_code, Supplier.all, :id, :supplier_name, :prompt => "Seleccionar Proveedor" %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <%= f.text_field :invoice_series, :class => 'input-shaptar', :placeholder => 'Serie de Factura' %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <%= f.number_field :invoice_number, :class => 'input-shaptar', :placeholder => 'Número de Factura' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.label :Fecha_de_Compra %>
+      <%= f.date_field :purchase_date, class: 'select-shaptar' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :total_purchase, :class => 'input-shaptar', :placeholder => 'Total de la Compra' %>
+    </div>
+    <div class="col-xs-12">
+      <%= f.text_area :observations, :class => 'textarea-shaptar', :placeholder => 'Observaciones' %>
+    </div>
+
+    <div class="col-xs-12">
+      <h6 class="text-blue">Ingrese una fotografía o copia de su factura.</h6>
+    </div>
+    <div class="col-xs-12">
+      <input type="file">
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row flex-items-xs-right">
+    <div class="col-xs-12 col-lg-3">
+      <%= f.submit 'Publicar Compra', :class => 'button-shaptar-green' %>
+    </div>
+  </div>
+
+<% end %>

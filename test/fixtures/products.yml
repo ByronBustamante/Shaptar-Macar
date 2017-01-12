@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_code: MyString
+  barcode: MyString
+  product_name: MyString
+  description: MyText
+  purchase_date: 2017-01-11
+  cost_in_quetzales: 
+  sale_price: 
+  percentage_in_sale: 1
+  number_of_articles: 1
+  name_supplier: MyString
+  name_brand: MyString
+  name_family: MyString
+  name_location_in_warehouse: MyString
+
+two:
+  product_code: MyString
+  barcode: MyString
+  product_name: MyString
+  description: MyText
+  purchase_date: 2017-01-11
+  cost_in_quetzales: 
+  sale_price: 
+  percentage_in_sale: 1
+  number_of_articles: 1
+  name_supplier: MyString
+  name_brand: MyString
+  name_family: MyString
+  name_location_in_warehouse: MyString

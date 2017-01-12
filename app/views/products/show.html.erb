@@ -1,0 +1,75 @@
+<br>
+
+<h2>Producto Guardado</h2>
+
+<br>
+
+<p>
+  <strong>Product code:</strong>
+  <%= @product.product_code %>
+</p>
+
+<p>
+  <strong>Barcode:</strong>
+  <%= @product.barcode %>
+</p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @product.purchase_date %>
+</p>
+
+<p>
+  <strong>Cost in quetzales:</strong>
+  <%= @product.cost_in_quetzales %>
+</p>
+
+<p>
+  <strong>Sale price:</strong>
+  <%= @product.sale_price %>
+</p>
+
+<p>
+  <strong>Percentage in sale:</strong>
+  <%= @product.percentage_in_sale %>
+</p>
+
+<p>
+  <strong>Number of articles:</strong>
+  <%= @product.number_of_articles %>
+</p>
+
+<p>
+  <strong>Name supplier:</strong>
+  <%= @product.name_supplier %>
+</p>
+
+<p>
+  <strong>Name brand:</strong>
+  <%= @product.name_brand %>
+</p>
+
+<p>
+  <strong>Name family:</strong>
+  <%= @product.name_family %>
+</p>
+
+<p>
+  <strong>Name location in warehouse:</strong>
+  <%= @product.name_location_in_warehouse %>
+</p>
+
+<%= link_to 'Editar', edit_product_path(@product) %> |
+<%= link_to "Volver a Inventario", {controller: "welcome", action: "productos"} %>
+
+<br><br>

@@ -1,0 +1,78 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#compras" role="tab">Compras</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#nueva-compra" role="tab">Nueva</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+
+<div class="tab-content">
+
+  <div class="tab-pane active" id="compras" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-8 col-md-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-4 col-md-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+
+      <div class="col-xs-12 negative">
+        <pre>
+          <table>
+
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Id</th>
+              <th>Copia de Factura</th>
+              <th>Proveedor</th>
+              <th>Factura Serie</th>
+              <th>Factura Número</th>
+              <th>Fecha de Compra</th>
+              <th>Total de la Compra</th>
+              <th>Observaciones</th>
+            </tr>
+
+            <% @purchases.each do |purchase| %>
+            <tr>
+              <td><%= link_to 'Editar', edit_purchase_path(purchase) %></td>
+              <td><%= link_to 'Eliminar', purchase, method: :delete, data: { confirm: 'Esta seguro de eliminar esta Compra' } %></td>
+              <td><%= purchase.id %></td>
+              <td>3</td>
+              <td><%= purchase.supplier_code %></td>
+              <td><%= purchase.invoice_series %></td>
+              <td><%= purchase.invoice_number %></td>
+              <td><%= purchase.purchase_date %></td>
+              <td><%= purchase.total_purchase %></td>
+              <td><%= purchase.observations %></td>
+            </tr>
+            <% end %>
+
+          </table>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="nueva-compra" role="tabpanel">
+    <br><h2>Ingresar una Nueva Compra</h2><br>
+    <%= render 'purchases/form' %>
+  </div>
+
+</div>
+
+<% else %>
+
+<% end %>

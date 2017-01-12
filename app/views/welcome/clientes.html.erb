@@ -1,0 +1,98 @@
+<% if user_signed_in? %>
+
+<!-- Nav tabs -->
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#clientes" role="tab">Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#nuevo-cliente" role="tab">Nuevo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tab panes -->
+
+<div class="tab-content">
+
+  <div class="tab-pane active" id="clientes" role="tabpanel">
+    <div class="row">
+      <div class="col-xs-8 col-md-10">
+        <input type="text" class="input-shaptar" placeholder="Ingresar Código">
+      </div>
+      <div class="col-xs-4 col-md-2">
+        <button type="button" class="button-shaptar-green">Buscar</button>
+      </div>
+
+      <div class="col-xs-12 negative">
+        <pre>
+          <table>
+
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Id</th>
+              <th>Código</th>
+              <th>Nit</th>
+              <th>Nombre Cliente</th>
+              <th>Razón Social</th>
+              <th>País</th>
+              <th>Departamento o Estado</th>
+              <th>Dirección</th>
+              <th>Teléfono 1</th>
+              <th>Teléfono 2</th>
+              <th>Celular 1</th>
+              <th>Celular 2</th>
+              <th>Correo Electrónico</th>
+              <th>Página Web</th>
+              <th>Transporte</th>
+              <th>Crédito en quetzales</th>
+              <th>Porcentaje en Descuento</th>
+              <th>Observaciones</th>
+            </tr>
+
+            <% @customers.each do |customer| %>
+            <tr>
+              <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
+              <td><%= link_to 'Eliminar', customer, method: :delete, data: { confirm: 'Esta seguro de eliminar este Cliente?' } %></td>
+              <td><%= customer.id %></td>
+              <td><%= customer.customer_code %></td>
+              <td><%= customer.nit %></td>
+              <td><%= customer.customer_name %></td>
+              <td><%= customer.company_name %></td>
+              <td><%= customer.country %></td>
+              <td><%= customer.department_or_state %></td>
+              <td><%= customer.address %></td>
+              <td><%= customer.telephone_1 %></td>
+              <td><%= customer.telephone_2 %></td>
+              <td><%= customer.mobile_1 %></td>
+              <td><%= customer.mobile_2 %></td>
+              <td><%= customer.email %></td>
+              <td><%= customer.web_page %></td>
+              <td><%= customer.transportation %></td>
+              <td><%= customer.credit_in_quetzales %></td>
+              <td><%= customer.discount_percentage %></td>
+              <td><%= customer.observations %></td>
+            </tr>
+            <% end %>
+
+          </table>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="nuevo-cliente" role="tabpanel">
+    <br><h2>Ingresar un Nuevo Cliente</h2><br>
+    <%= render 'customers/form' %>
+  </div>
+
+</div>
+
+<% else %>
+
+<% end %>
