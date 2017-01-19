@@ -28,6 +28,8 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 # Authentication devise security
 gem 'devise'
 
+gem 'chartjs-ror'
+
 gem 'paperclip'
 
 gem 'awesome_rails_console'
