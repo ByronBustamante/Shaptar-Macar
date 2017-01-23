@@ -30,64 +30,14 @@
     <%= f.collection_select :name_brand, Brand.all, :brand, :brand, :prompt => "Seleccionar Marca" %>
   </div>
   <div class="col-xs-3 col-md-2 col-lg-1">
-    <!-- Button trigger modal -->
-    <button type="button" class="button-shaptar-blue" data-toggle="modal" data-target="#myModal-marca">+</button>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal-marca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Marcas</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-xs-12">
-                <input type="text" class="input-shaptar" placeholder="Ingresar Marca">
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar Marca</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a href="/brands"><div class="button-shaptar-blue">+</div></a>
   </div>
 
   <div class="col-xs-9 col-md-10 col-lg-11">
     <%= f.collection_select :name_family, Family.all, :family, :family, :prompt => "Seleccionar Familia" %>
   </div>
   <div class="col-xs-3 col-md-2 col-lg-1">
-    <!-- Button trigger modal -->
-    <button type="button" class="button-shaptar-blue" data-toggle="modal" data-target="#myModal-familia">+</button>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal-familia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Familias</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-xs-12">
-                <input type="text" class="input-shaptar" placeholder="Ingresar Familia">
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar Familia</button>
-          </div>
-        </div>
-      </div>
-    </div>
+      <a href="/families"><div class="button-shaptar-blue">+</div></a>
   </div>
 
   <div class="col-xs-12">
@@ -98,32 +48,7 @@
     <%= f.collection_select :name_location_in_warehouse, LocationInWarehouse.all, :location, :location, :prompt => "Ubicación en Bodega" %>
   </div>
   <div class="col-xs-3 col-md-2 col-lg-1">
-    <!-- Button trigger modal -->
-    <button type="button" class="button-shaptar-blue" data-toggle="modal" data-target="#myModal-ubicacion">+</button>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal-ubicacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Ubicación en Bodega</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-xs-12">
-                <input type="text" class="input-shaptar" placeholder="Ingresar Ubicación">
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar Ubicación</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a href="/location_in_warehouses"><div class="button-shaptar-blue">+</div></a>
   </div>
 
   <div class="col-xs-12">

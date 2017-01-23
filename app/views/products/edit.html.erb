@@ -1,10 +1,155 @@
 <br>
 
-<h1>Editar Producto</h1>
+<h1 class="form">Editar Producto</h1>
+
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    <%= f.collection_select :name_supplier, Supplier.all, :id, :supplier_name, :prompt => "Seleccionar Proveedor" %>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <%= f.text_field :product_code, :class => 'input-shaptar', :placeholder => 'Código Producto' %>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <%= f.number_field :barcode, :class => 'input-shaptar', :placeholder => 'Código de Barras' %>
+  </div>
+
+  <div class="col-xs-12">
+    <%= f.text_field :product_name, :class => 'input-shaptar', :placeholder => 'Nombre del Producto' %>
+  </div>
+
+  <div class="col-xs-9 col-md-10 col-lg-11">
+    <%= f.collection_select :name_brand, Brand.all, :brand, :brand, :prompt => "Seleccionar Marca" %>
+  </div>
+  <div class="col-xs-3 col-md-2 col-lg-1">
+    <!-- Button trigger modal -->
+    <button type="button" class="button-shaptar-blue" data-toggle="modal" data-target="#myModal-marca">+</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-marca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Marcas</h4>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-9 col-md-10 col-lg-11">
+    <%= f.collection_select :name_family, Family.all, :family, :family, :prompt => "Seleccionar Familia" %>
+  </div>
+  <div class="col-xs-3 col-md-2 col-lg-1">
+    <!-- Button trigger modal -->
+    <button type="button" class="button-shaptar-blue" data-toggle="modal" data-target="#myModal-familia">+</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-familia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Familias</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <input type="text" class="input-shaptar" placeholder="Ingresar Familia">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar Familia</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <%= f.text_area :description, :class => 'textarea-shaptar', :placeholder => 'Descripción' %>
+  </div>
+
+  <div class="col-xs-9 col-md-10 col-lg-11">
+    <%= f.collection_select :name_location_in_warehouse, LocationInWarehouse.all, :location, :location, :prompt => "Ubicación en Bodega" %>
+  </div>
+  <div class="col-xs-3 col-md-2 col-lg-1">
+    <!-- Button trigger modal -->
+    <button type="button" class="button-shaptar-blue" data-toggle="modal" data-target="#myModal-ubicacion">+</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-ubicacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Ubicación en Bodega</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <input type="text" class="input-shaptar" placeholder="Ingresar Ubicación">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar Ubicación</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <%= f.label :Fecha_de_Compra %>
+    <%= f.date_field :purchase_date, class: 'select-shaptar' %>
+  </div>
+
+  <div class="col-xs-12 col-lg-4">
+    <%= f.text_field :cost_in_quetzales, :class => 'input-shaptar', :placeholder => 'Precio en Quetzales' %>
+  </div>
+  <div class="col-xs-12 col-lg-4">
+    <%= f.text_field :sale_price, :class => 'input-shaptar', :placeholder => 'Precio de Venta' %>
+  </div>
+  <div class="col-xs-12 col-lg-4">
+    <%= f.number_field :percentage_in_sale, :class => 'input-shaptar', :placeholder => 'Porcentaje en Descuento' %>
+  </div>
+
+  <div class="col-xs-12">
+    <%= f.number_field :number_of_articles, :class => 'input-shaptar', :placeholder => 'Stock' %>
+  </div>
+</div>
 
 <br>
 
-<%= render 'form' %>
+<div class="row flex-items-xs-right">
+  <div class="col-xs-12 col-lg-3">
+    <%= f.submit 'Publicar Producto', :class => 'button-shaptar-green' %>
+  </div>
+</div>
+
+<% end %>
 
 <%= link_to 'Ver', @product %> |
 <%= link_to "Volver a Inventario", {controller: "welcome", action: "productos"} %>

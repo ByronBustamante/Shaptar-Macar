@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Ingresar Familias</h1>
+  </div>
+</div>
 
-<h1>Listing Families</h1>
+<%= render 'form' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Family</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-xs-12">
+    <table>
+      <thead>
+        <tr>
+          <th>Familias</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @families.each do |family| %>
-      <tr>
-        <td><%= family.family %></td>
-        <td><%= link_to 'Show', family %></td>
-        <td><%= link_to 'Edit', edit_family_path(family) %></td>
-        <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Family', new_family_path %>
+      <tbody>
+        <% @families.each do |family| %>
+          <tr>
+            <td><%= family.family %></td>
+            <td class="text-end"><%= link_to 'Editar', edit_family_path(family) %> | <%= link_to 'Eliminar', family, method: :delete, data: { confirm: 'Está seguro de eliminar esta familia?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

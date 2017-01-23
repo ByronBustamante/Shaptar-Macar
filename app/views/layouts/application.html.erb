@@ -82,7 +82,31 @@
   </main>
 </div>
 
-<%= link_to "+", {controller: 'welcome', action: 'reportes'}, class: "button-plus" %>
+<!-- Button trigger modal -->
+<button type="button" class="button-plus" data-toggle="modal" data-target="#myModal-marca">+</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal-marca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Agregar Selectores</h4>
+      </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"><b>Inventario</b></h5>
+        + <%= link_to 'Marcas', {controller: 'brands', action: 'index'} %> <br>
+        + <%= link_to 'Familias', {controller: 'families', action: 'index'} %> <br>
+        + <%= link_to 'Ubicación en Bodega', {controller: 'location_in_warehouses', action: 'index'} %>
+      </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"><b>Clientes</b></h5>
+        + <%= link_to 'Transporte de Envío', {controller: 'transportations', action: 'index'} %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% else %>
 
@@ -120,7 +144,21 @@
   </div>
 </div>
 
-<%= link_to "+", {controller: 'welcome', action: 'reportes'}, class: "button-plus"%>
+<!-- Button trigger modal -->
+<button type="button" class="button-plus" data-toggle="modal" data-target="#myModal-marca">+</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal-marca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Necesitas Iniciar Sesión</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Salir</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
 

@@ -1,10 +1,12 @@
 class TransportationsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_transportation, only: [:show, :edit, :update, :destroy]
 
   # GET /transportations
   # GET /transportations.json
   def index
     @transportations = Transportation.all
+    @transportation = Transportation.new
   end
 
   # GET /transportations/1
@@ -28,7 +30,7 @@ class TransportationsController < ApplicationController
 
     respond_to do |format|
       if @transportation.save
-        format.html { redirect_to @transportation, notice: 'Transportation was successfully created.' }
+        format.html { redirect_to action: 'index' }
         format.json { render :show, status: :created, location: @transportation }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class TransportationsController < ApplicationController
   def update
     respond_to do |format|
       if @transportation.update(transportation_params)
-        format.html { redirect_to @transportation, notice: 'Transportation was successfully updated.' }
+        format.html { redirect_to action: 'index' }
         format.json { render :show, status: :ok, location: @transportation }
       else
         format.html { render :edit }

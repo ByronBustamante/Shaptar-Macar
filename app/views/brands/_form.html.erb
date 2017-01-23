@@ -1,21 +1,24 @@
-<%= form_for(@brand) do |f| %>
+<%= form_for(@brand, remote: true) do |f| %>
   <% if @brand.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
 
       <ul>
-      <% @brand.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @brand.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
+
   <% end %>
 
-  <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
+  <div class="row">
+    <div class="col-xs-7 col-md-9 col-lg-10">
+      <%= f.text_field :brand, :class => 'input-shaptar', :placeholder => 'Ingresar Marca' %>
+    </div>
+    <div class="col-xs-5 col-md-3 col-lg-2">
+      <%= f.submit 'Guardar', :class => 'button-shaptar-green' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

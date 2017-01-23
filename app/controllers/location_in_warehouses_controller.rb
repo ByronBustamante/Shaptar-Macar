@@ -1,10 +1,12 @@
 class LocationInWarehousesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_location_in_warehouse, only: [:show, :edit, :update, :destroy]
 
   # GET /location_in_warehouses
   # GET /location_in_warehouses.json
   def index
     @location_in_warehouses = LocationInWarehouse.all
+    @location_in_warehouse = LocationInWarehouse.new
   end
 
   # GET /location_in_warehouses/1
@@ -28,7 +30,7 @@ class LocationInWarehousesController < ApplicationController
 
     respond_to do |format|
       if @location_in_warehouse.save
-        format.html { redirect_to @location_in_warehouse, notice: 'Location in warehouse was successfully created.' }
+        format.html { redirect_to action: 'index' }
         format.json { render :show, status: :created, location: @location_in_warehouse }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class LocationInWarehousesController < ApplicationController
   def update
     respond_to do |format|
       if @location_in_warehouse.update(location_in_warehouse_params)
-        format.html { redirect_to @location_in_warehouse, notice: 'Location in warehouse was successfully updated.' }
+        format.html { redirect_to action: 'index' }
         format.json { render :show, status: :ok, location: @location_in_warehouse }
       else
         format.html { render :edit }
