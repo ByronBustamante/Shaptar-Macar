@@ -136,43 +136,15 @@
       <div class="box-logo-white"><%= image_tag "logo-wahl.png", width: '90%' %></div>
     </div>
 
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box-logo-white"><%= image_tag "logo-macar-best-of-the-best.png", width: '90%' %></div>
+    </div>
+
   </div>
 </div>
 
 <div class="box-landing-page">
-  <div class="row">
-
-    <div class="col-xs-12 text-center">
-      <h1>Contactenos</h1>
-      <h4>Escríbanos si desea más información sobre nuestra gama de productos</h4>
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-      <div class="row">
-        <div class="col-xs-12">
-          <textarea class="textarea-contacto-shaptar" name="mensaje" placeholder="Escriba su Mensaje:"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-      <div class="row">
-        <div class="col-xs-12">
-          <input type="text" class="input-shaptar" name="nombre" placeholder="Nombre y Apellido" value="">
-        </div>
-        <div class="col-xs-12">
-          <input type="text" class="input-shaptar" name="nombre" placeholder="Teléfono" value="">
-        </div>
-        <div class="col-xs-12">
-          <input type="text" class="input-shaptar" name="nombre" placeholder="Correo Electrónico" value="">
-        </div>
-        <div class="col-xs-12">
-          <input type="submit" value="Enviar Mensaje" class="button-shaptar-green" name="boton">
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <%= render 'contacts/form' %>
 </div>
 
 <% end %>

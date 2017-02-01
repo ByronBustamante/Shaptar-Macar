@@ -1,4 +1,9 @@
 class WelcomeController < ApplicationController
+  def index
+    @contacts = Contact.all
+    @contact = Contact.new
+  end
+
   def productos
     @products = Product.all
     @product = Product.new

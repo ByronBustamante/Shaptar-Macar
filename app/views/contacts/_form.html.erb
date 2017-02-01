@@ -1,0 +1,48 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+
+    <div class="col-xs-12 text-center">
+      <h1>Contactenos</h1>
+      <h4>Escríbanos si desea más información sobre nuestra gama de productos</h4>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.text_area :message, :class => 'textarea-contacto-shaptar', :placeholder => 'Escriba su Mensaje:' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.text_field :name, :class => 'input-shaptar', :placeholder => 'Nombre y Apellido' %>
+        </div>
+        <div class="col-xs-12">
+          <%= f.number_field :telephone, :class => 'input-shaptar', :placeholder => 'Teléfono' %>
+        </div>
+        <div class="col-xs-12">
+          <%= f.email_field :email, :class => 'input-shaptar', :placeholder => 'Correo Electrónico' %>
+        </div>
+        <div class="col-xs-12">
+          <%= f.submit 'Enviar Mensaje', :class => 'button-shaptar-green' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<% end %>

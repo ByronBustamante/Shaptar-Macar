@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :products
+  resources :contacts
   resources :products
   resources :transportations
   resources :customers
   resources :suppliers
   resources :purchases
-  resources :products
   resources :location_in_warehouses
   resources :families
   resources :brands
   devise_for :users
 
+  get 'welcome/gracias'
   get 'welcome/productos'
   get 'welcome/proveedores'
   get 'welcome/compras'
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  # 
+  #
   # Example resource route with options:
   #   resources :products do
   #     member do
