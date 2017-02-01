@@ -1,6 +1,8 @@
-<h1>Editing Customer</h1>
+<br>
+
+<h1 class="form">Editar Clientes</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Ver Cliente', @customer %> |
+<%= link_to "Volver a Clientes", {controller: "welcome", action: "clientes"} %>

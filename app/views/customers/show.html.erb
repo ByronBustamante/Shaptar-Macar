@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <br>
 
@@ -91,5 +90,7 @@
   <%= @customer.observations %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Editar', edit_customer_path(@customer) %> |
+<%= link_to "Volver a Clientes", {controller: "welcome", action: "clientes"} %>
+
+<br><br>

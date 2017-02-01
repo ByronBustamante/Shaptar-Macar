@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<br>
+
+<h2>Proveedor Guardado</h2>
+
+<br>
 
 <p>
   <strong>Supplier code:</strong>
@@ -70,5 +74,7 @@
   <%= @supplier.observations %>
 </p>
 
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>
+<%= link_to 'Editar', edit_supplier_path(@supplier) %> |
+<%= link_to "Volver a Proveedores", {controller: "welcome", action: "proveedores"} %>
+
+<br><br>
