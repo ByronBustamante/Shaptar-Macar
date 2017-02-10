@@ -1,34 +1,7 @@
-<p id="notice"><%= notice %></p>
+<br><br>
 
-<p>
-  <strong>Supplier code:</strong>
-  <%= @purchase.supplier_code %>
-</p>
+<center><%= image_tag @purchase.factura.url(:large) %></center>
 
-<p>
-  <strong>Invoice series:</strong>
-  <%= @purchase.invoice_series %>
-</p>
+<br>
 
-<p>
-  <strong>Invoice number:</strong>
-  <%= @purchase.invoice_number %>
-</p>
-
-<p>
-  <strong>Purchase date:</strong>
-  <%= @purchase.purchase_date %>
-</p>
-
-<p>
-  <strong>Total purchase:</strong>
-  <%= @purchase.total_purchase %>
-</p>
-
-<p>
-  <strong>Observations:</strong>
-  <%= @purchase.observations %>
-</p>
-
-<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
-<%= link_to 'Back', purchases_path %>
+<center><%= link_to "Atras", {controller: 'welcome', action: 'compras'} %></center>

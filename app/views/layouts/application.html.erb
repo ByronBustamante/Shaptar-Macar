@@ -21,7 +21,7 @@
       <ul>
         <li><%= link_to "Byron Bustamante", {controller: 'welcome', action: 'index'} %></li>
         <li>|</li>
-        <li><%= link_to "Mensajes", {controller: 'welcome', action: 'index'} %></li>
+        <li><%= link_to "Mensajes", {controller: 'contacts', action: 'index'} %></li>
         <li>|</li>
 
         <li><a href="#">Servicios</a>
@@ -93,13 +93,13 @@
       </div>
       <div class="modal-header">
         <h5 class="modal-title" id="myModalLabel"><b>Inventario</b></h5>
-        + <%= link_to 'Marcas', {controller: 'brands', action: 'index'} %> <br>
-        + <%= link_to 'Familias', {controller: 'families', action: 'index'} %> <br>
-        + <%= link_to 'Ubicación en Bodega', {controller: 'location_in_warehouses', action: 'index'} %>
+        <%= link_to 'Marcas', {controller: 'brands', action: 'index'} %> <br>
+        <%= link_to 'Familias', {controller: 'families', action: 'index'} %> <br>
+        <%= link_to 'Ubicación en Bodega', {controller: 'location_in_warehouses', action: 'index'} %>
       </div>
       <div class="modal-header">
         <h5 class="modal-title" id="myModalLabel"><b>Clientes</b></h5>
-        + <%= link_to 'Transporte de Envío', {controller: 'transportations', action: 'index'} %>
+        <%= link_to 'Transporte de Envío', {controller: 'transportations', action: 'index'} %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>

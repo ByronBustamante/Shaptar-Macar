@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :brands
   devise_for :users
 
-  get 'welcome/gracias'
+  get 'welcome/contacts'
   get 'welcome/productos'
   get 'welcome/proveedores'
   get 'welcome/compras'

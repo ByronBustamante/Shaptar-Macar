@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>Name:</strong>
+  <strong>Fecha de Recibido:</strong>
+  <%= @contact.created_at %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
   <%= @contact.name %>
 </p>
 
 <p>
-  <strong>Telephone:</strong>
+  <strong>Teléfono:</strong>
   <%= @contact.telephone %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>Correo Electrónico:</strong>
   <%= @contact.email %>
 </p>
 
 <p>
-  <strong>Message:</strong>
+  <strong>Mensaje:</strong><br>
   <%= @contact.message %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Atras', contacts_path %>

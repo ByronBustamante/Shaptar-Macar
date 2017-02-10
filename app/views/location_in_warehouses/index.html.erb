@@ -20,7 +20,7 @@
         <% @location_in_warehouses.each do |location_in_warehouse| %>
           <tr>
             <td><%= location_in_warehouse.location %></td>
-            <td class="text-end"><%= link_to 'Edit', edit_location_in_warehouse_path(location_in_warehouse) %> | <%= link_to 'Destroy', location_in_warehouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="text-end"><%= link_to 'Editar', edit_location_in_warehouse_path(location_in_warehouse) %> | <%= link_to 'Eliminar', location_in_warehouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

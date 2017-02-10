@@ -55,6 +55,7 @@
             <% @products.each do |product| %>
             <tr>
               <td><%= link_to 'Editar', edit_product_path(product) %></td>
+              <td><%= link_to 'Ver', product %></td>
               <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Está seguro de eliminar este producto?' } %></td>
               <td><%= product.id %></td>
               <td>3</td>

@@ -35,8 +35,8 @@
             <tr>
               <th></th>
               <th></th>
+              <th></th>
               <th>Id</th>
-              <th>Copia de Factura</th>
               <th>Proveedor</th>
               <th>Factura Serie</th>
               <th>Factura Número</th>
@@ -48,9 +48,9 @@
             <% @purchases.each do |purchase| %>
             <tr>
               <td><%= link_to 'Editar', edit_purchase_path(purchase) %></td>
+              <td><%= link_to 'Ver', purchase %></td>
               <td><%= link_to 'Eliminar', purchase, method: :delete, data: { confirm: 'Esta seguro de eliminar esta Compra' } %></td>
               <td><%= purchase.id %></td>
-              <td>3</td>
               <td><%= purchase.supplier_code %></td>
               <td><%= purchase.invoice_series %></td>
               <td><%= purchase.invoice_number %></td>

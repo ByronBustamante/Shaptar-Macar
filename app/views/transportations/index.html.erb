@@ -20,7 +20,7 @@
         <% @transportations.each do |transportation| %>
           <tr>
             <td><%= transportation.transportation %></td>
-            <td class="text-end"><%= link_to 'Edit', edit_transportation_path(transportation) %> | <%= link_to 'Destroy', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="text-end"><%= link_to 'Editar', edit_transportation_path(transportation) %> | <%= link_to 'Eliminar', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
